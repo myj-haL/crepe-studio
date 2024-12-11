@@ -1,0 +1,10 @@
+.container {
+    color: #fff;
+    padding: 90px 16px 100px;
+    box-sizing: border-box;
+    height: 100%;
+
+    @media screen and (min-width:1280px) {
+        padding: 170px 54px 200px;
+    }
+}

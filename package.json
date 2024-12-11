@@ -1,0 +1,63 @@
+{
+  "name": "minibim",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^7.1.0",
+    "@gsap/react": "^2.1.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "aos": "^2.3.4",
+    "browser-router": "^0.2.0",
+    "firebase": "^11.0.1",
+    "gsap": "^3.12.5",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "postcss-assets": "^6.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "react-scripts": "^5.0.1",
+    "swiper": "^11.1.9",
+    "web-vitals": "^2.1.4"
+  },
+  "homepage": "https://moonyujenong.github.io/MiNiBiM/",
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "gh-pages": "^6.1.1",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.0.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-nesting": "^12.0.2",
+    "postcss-preset-env": "^9.3.0",
+    "prettier": "^3.3.3"
+  }
+}

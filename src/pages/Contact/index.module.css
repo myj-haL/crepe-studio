@@ -1,0 +1,144 @@
+.container {
+  padding: 74px 16px 72px;
+  font-family: 'Pretendard';
+
+  .title {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 52px;
+    margin-bottom: 59px;
+    letter-spacing: 3px;
+    display: block;
+  }
+
+  .enter_list {
+    display: grid;
+    gap: 30px;
+  }
+
+  .form_box {
+    position: relative;
+
+    label {
+      position: relative;
+    }
+
+    input,
+    textarea,
+    .custom_file {
+      box-sizing: border-box;
+      display: block;
+      background-color: transparent;
+      width: 100%;
+      font-size: 16px;
+      color: #fff;
+
+      &::placeholder {
+        color: #898989;
+      }
+    }
+
+    .file_name_input {
+      padding-right: 100px;
+    }
+
+    textarea {
+      border: 1px solid #fff;
+      padding: 20px;
+      height: 353px;
+    }
+
+    input,
+    .custom_file {
+      border-bottom: 1px solid #fff;
+      padding: 0 0 14px;
+    }
+  }
+
+  .category {
+    position: relative;
+    font-size: 22px;
+    color: #fff;
+    display: block;
+    margin-bottom: 17px;
+
+    &.requir {
+      &::after {
+        content: '*';
+        display: block;
+        color: #e65706;
+        display: inline-block;
+        font-size: 17px;
+        position: relative;
+        top: -3px;
+        right: -4px;
+      }
+    }
+  }
+
+  .submit_btn {
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    margin: 23px auto 0;
+    padding: 21px 49px;
+    color: #fff;
+    font-size: 16px;
+    display: block;
+  }
+
+  .file_upload {
+    color: #fff;
+    position: absolute;
+    bottom: 14px;
+    right: 8px;
+    border-bottom: 1px solid #fff;
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 79px 16px 95px;
+
+    .title {
+      font-size: 60px;
+      line-height: 135px;
+      margin-bottom: 42px;
+    }
+
+    .enter_list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px 92px;
+    }
+
+    .form_box {
+      &:last-child {
+        grid-column: 1 / -1;
+      }
+
+      input,
+      textarea,
+      .custom_file {
+        font-size: 18px;
+      }
+
+      textarea {
+        height: 222px;
+      }
+    }
+
+    .category {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .file_upload {
+      font-size: 18px;
+    }
+
+    .submit_btn {
+      margin: 46px 0 0 auto;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.container {
+  height: 90px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 54px;
+  -webkit-backdrop-filter: blur(10px);
+
+  .logo_link {
+    h1 {
+      display: none;
+    }
+
+    img {
+      height: 27px;
+      width: auto;
+      display: block;
+    }
+  }
+
+  .menu_list {
+    display: flex;
+    align-items: center;
+    gap: 127px;
+
+    li {
+      position: relative;
+
+      &.active {
+        a {
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            bottom: -6px;
+          }
+        }
+      }
+    }
+
+    a {
+      font-size: 24px;
+      color: #fff;
+      font-weight: 400;
+    }
+  }
+}

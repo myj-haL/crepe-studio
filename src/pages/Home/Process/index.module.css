@@ -1,0 +1,148 @@
+.container {
+  padding: 16vw 0;
+
+  .title {
+    color: #fff;
+    font-size: 16vw;
+    font-weight: 400;
+    line-height: 20.267vw;
+    margin: 0 0 6.933vw;
+  }
+
+  .process_list_wrap {
+    display: grid;
+    gap: 13.067vw;
+  }
+
+  .list_item {
+    > img {
+      width: calc((100vw * 126) / 375);
+      aspect-ratio: 1/1;
+      margin-bottom: 6.933vw;
+    }
+  }
+
+  .contents {
+    .item_title {
+      display: flex;
+      align-items: center;
+
+      > p {
+        color: #fff;
+        margin: 0 0 2.4vw;
+        font-size: 4.8vw;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      p:first-child {
+        flex: 0 0 8.267vw;
+      }
+    }
+
+    > p {
+      font-size: 4.267vw;
+      line-height: 6.4vw;
+      font-weight: 400;
+      color: #a4a4a4;
+      white-space: pre-wrap;
+      word-break: keep-all;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 60px 0 90px;
+
+    .title {
+      font-size: 154px;
+      line-height: 164px;
+      margin-bottom: 108px;
+    }
+
+    .process_list {
+      display: flex;
+      align-items: center;
+      gap: 174px;
+      width: 100%;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .thumb_swipe {
+      width: 100%;
+      max-width: 370px;
+      aspect-ratio: 1/1;
+    }
+
+    .img_box {
+      img {
+        width: 100%;
+        max-width: 370px;
+        aspect-ratio: 1/1;
+      }
+    }
+
+    .text_swipe {
+      flex: 1;
+      padding-left: 33px;
+
+      > div {
+        display: grid;
+        gap: 132px;
+        transform: none !important;
+      }
+    }
+
+    .text_box {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+
+      &:global(.swiper-slide-thumb-active) {
+        .left_title {
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -33px;
+            width: 15px;
+            height: 3px;
+            top: 13px;
+            background-color: #fff;
+          }
+        }
+      }
+    }
+
+    .left_title {
+      flex: 0 0 35%;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      word-break: keep-all;
+      position: relative;
+
+      p {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: normal;
+
+        &:first-child {
+          flex: 0 0 47px;
+        }
+      }
+    }
+
+    .right_title {
+      p {
+        color: #a4a4a4;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        word-break: keep-all;
+        white-space: pre-wrap;
+      }
+    }
+  }
+}

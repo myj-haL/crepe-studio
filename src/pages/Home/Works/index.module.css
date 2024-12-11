@@ -1,0 +1,71 @@
+.container {
+  padding: 86px 0px 60px;
+  position: relative;
+  box-sizing: border-box;
+
+  .title {
+    font-size: 16vw;
+    line-height: 20.267vw;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+
+  .work_slide {
+    margin: 0 -16px;
+  }
+
+  .works_swipe {
+    padding: 0 16px;
+  }
+
+  .slide_item {
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .name {
+    margin-top: 6.4vw;
+    font-size: 5.333vw;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 2.133vw;
+  }
+
+  .category {
+    font-size: 4.267vw;
+    font-weight: 400;
+    color: #A4A4A4;
+    margin: 0;
+  }
+
+  @media screen and (min-width:1280px) {
+    padding: 240px 0 105px;
+
+    .title {
+      font-size: 154px;
+      line-height: 164px;
+      margin-bottom: 108px;
+    }
+
+    .work_slide {
+      margin: 0 -54px;
+    }
+
+    .works_swipe {
+      padding: 0 54px 0 462px;
+    }
+
+    .name {
+      font-size: 30px;
+      margin-top: 30px;
+      margin-bottom: 14px;
+    }
+
+    .category {
+      font-size: 28px;
+    }
+  }
+}
