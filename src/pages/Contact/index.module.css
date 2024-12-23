@@ -4,17 +4,17 @@
 
   .title {
     color: #fff;
-    font-size: 32px;
+    font-size: 8.533vw;
+    font-style: normal;
     font-weight: 400;
-    line-height: 52px;
-    margin-bottom: 59px;
-    letter-spacing: 3px;
+    line-height: normal;
     display: block;
+    margin-bottom: 14.4vw;
   }
 
   .enter_list {
     display: grid;
-    gap: 30px;
+    gap: 8vw;
   }
 
   .form_box {
@@ -31,11 +31,16 @@
       display: block;
       background-color: transparent;
       width: 100%;
-      font-size: 16px;
       color: #fff;
+      font-size: 4.267vw;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 34px;
+      font-family: Pretendard;
 
       &::placeholder {
         color: #898989;
+        font-weight: 300;
       }
     }
 
@@ -45,23 +50,27 @@
 
     textarea {
       border: 1px solid #fff;
-      padding: 20px;
+      padding: 3.467vw;
       height: 353px;
+      margin-top: 4.533vw;
     }
 
     input,
     .custom_file {
       border-bottom: 1px solid #fff;
-      padding: 0 0 14px;
+      padding: 0 0 1.333vw;
     }
   }
 
   .category {
     position: relative;
-    font-size: 22px;
+    font-size: 4.8vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
     color: #fff;
     display: block;
-    margin-bottom: 17px;
+    margin-bottom: 1.867vw;
 
     &.requir {
       &::after {
@@ -69,10 +78,10 @@
         display: block;
         color: #e65706;
         display: inline-block;
-        font-size: 17px;
+        font-size: 4.8vw;
         position: relative;
-        top: -3px;
-        right: -4px;
+        top: -0.8vw;
+        right: -1.067vw;
       }
     }
   }
@@ -80,41 +89,55 @@
   .submit_btn {
     border: 1px solid #fff;
     box-sizing: border-box;
-    margin: 23px auto 0;
-    padding: 21px 49px;
+    margin: 28px auto 0;
     color: #fff;
     font-size: 16px;
     display: block;
+    font-weight: 500;
+    width: 170px;
+    height: 62px;
   }
 
   .file_upload {
     color: #fff;
     position: absolute;
-    bottom: 14px;
-    right: 8px;
-    border-bottom: 1px solid #fff;
+    bottom: 12px;
+    right: 7px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
     font-size: 16px;
+    font-weight: 500;
+    line-height: 34px;
   }
 
   @media screen and (min-width: 1280px) {
-    padding: 79px 16px 95px;
+    padding: 140px 55px;
 
     .title {
-      font-size: 60px;
-      line-height: 135px;
-      margin-bottom: 42px;
+      font-size: 58px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 100px;
     }
 
     .enter_list {
       flex-direction: row;
       flex-wrap: wrap;
       grid-template-columns: repeat(2, 1fr);
-      gap: 50px 92px;
+      gap: 50px ;
     }
 
     .form_box {
       &:last-child {
-        grid-column: 1 / -1;
+        grid-column: 1/3;
+      }
+
+      input {
+        padding-bottom: 10px;
       }
 
       input,
@@ -125,16 +148,32 @@
 
       textarea {
         height: 222px;
+        margin: 0;
+        padding: 20px;
       }
     }
 
     .category {
       font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
       margin-bottom: 30px;
+
+      &.requir {
+        &::after {
+          font-size: 22px;
+          font-weight: 600;
+          top: -1px;
+          right: -4px;
+        }
+      }
     }
 
     .file_upload {
       font-size: 18px;
+      right: 0;
+      bottom: 10px;
     }
 
     .submit_btn {
