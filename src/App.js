@@ -10,7 +10,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 
 function App() {
   return (
-    <BrowserRouter basename="/MiNiBiM">
+    <BrowserRouter basename="/crepe-studio">
       <Suspense fallback={<div className="loading">Loading...</div>}>
         <Routes>
             <Route path="/" element={<Home />} />
