@@ -23,11 +23,11 @@
     "swiper": "^11.1.9",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://myj-hal.github.io/crepe-studio/",
+  "homepage": "/",
   "scripts": {
     "start": "craco start",
     "devbuild": "craco build",
-    "build": "craco build",
+    "build": "react-scripts build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
