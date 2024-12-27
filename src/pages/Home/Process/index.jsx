@@ -34,7 +34,7 @@ export function MobileProcess() {
   return (
     <div className={style.process_list_wrap}>
       {process.map((item) => (
-        <div className={style.list_item} key={item.id}>
+        <div className={style.list_item} key={item.id} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
           <img alt="process img" src={item.img} />
           <div className={style.contents}>
             <h3 className={style.item_title}>

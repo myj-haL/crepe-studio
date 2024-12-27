@@ -28,7 +28,7 @@ export default Service;
 
 export function MobileService() {
   return (
-    <div data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
+    <div data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
       <h2 className={style.title}>
         Service
       </h2>
@@ -39,8 +39,8 @@ export function MobileService() {
             className={style.list_item}
             key={item.id}
             data-aos="fade-up"
-            data-aos-offset="200"
-            data-aos-duration={item.duration}
+            data-aos-offset="100"
+            data-aos-duration="1000"
           >
             <h3 className={style.item_title}>{item.title}</h3>
             <p className={style.item_desc}>{item.desc}</p>
