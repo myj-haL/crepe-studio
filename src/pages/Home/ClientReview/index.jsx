@@ -4,10 +4,19 @@ import style from './index.module.css';
 import iconPlus from 'images/common/icon-plus.svg';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import useResponsive from '../../../common/hook/Responsive';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function ClientReview() {
+  const screenSize = useResponsive();
+
+  useEffect(() => {
+    AOS.init();
+  }, [screenSize]);
+
   const countEls = useRef([]);
   const countContainer = useRef();
 
@@ -21,11 +30,11 @@ function ClientReview() {
         snap: {
           innerHTML: round,
         },
-        duration: 4,
+        duration: 1,
         scrollTrigger: {
           trigger: countContainer.current,
-          start: 'bottom bottom',
-          end: 'top 10%',
+          start: 'top 40%',
+          end: 'bottom bottom',
         },
       });
     }, []);
@@ -37,10 +46,10 @@ function ClientReview() {
   }, []);
 
   return (
-    <div className={style.container}>
-      <h3 className={style.title}>Our results</h3>
+    <div className={style.container} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000" ref={countContainer}>
+      <h3 className={style.title} >Our results</h3>
 
-      <ul className={style.review_list} ref={countContainer}>
+      <ul className={style.review_list}>
         {reviewList.map((item, index) => (
           <li className={style.review_item} key={item.id}>
             <h3 className={style.length}>

@@ -28,8 +28,8 @@ export default Service;
 
 export function MobileService() {
   return (
-    <>
-      <h2 className={style.title} data-aos="fade-up" data-aos-offset="200">
+    <div data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
+      <h2 className={style.title}>
         Service
       </h2>
 
@@ -47,7 +47,7 @@ export function MobileService() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
@@ -64,32 +64,32 @@ export function PcService() {
       gsap
         .timeline({
           defaults: {
-            duration: 1000,
+            duration: 1,
           },
           scrollTrigger: {
             trigger: wrapEl.current,
             scrub: 1,
             start: 'top +=90px',
-            end: '+=3000',
+            end: '+=2000',
             pin: true,
           },
         })
         .from(targetEl1, { opacity: 0, y: 20 })
-        .to(targetEl1, { opacity: 1, y: 0 })
-        .to(targetEl1, { opacity: 0, y: -20, delay: 150 })
-        .from(targetEl2, { opacity: 0, y: 20, delay: 1 })
-        .to(targetEl2, { opacity: 1, y: 0 })
-        .to(targetEl2, { opacity: 0, y: -20, delay: 150 })
-        .from(targetEl3, { opacity: 0, y: 20, delay: 1 })
-        .to(targetEl3, { opacity: 1, y: 0 })
-        .to(targetEl3, { opacity: 0, y: -20, delay: 150 });
+        .to(targetEl1, { opacity: 1, y: 0 }, "+=0.5")
+        .to(targetEl1, { opacity: 0, y: -20 }, "+=0.5")
+        .from(targetEl2, { opacity: 0, y: 20 }, "+=0.5")
+        .to(targetEl2, { opacity: 1, y: 0 }, "+=0.5")
+        .to(targetEl2, { opacity: 0, y: -20 }, "+=0.5")
+        .from(targetEl3, { opacity: 0, y: 20 }, "+=0.5")
+        .to(targetEl3, { opacity: 1, y: 0 }, "+=0.5")
+        // .to(targetEl3, { opacity: 0, y: -20 }, "+=0.5");
     },
     { scope: wrapEl.current }
   );
 
   return (
-    <div ref={wrapEl}>
-      <h2 className={style.title}>
+    <div ref={wrapEl} className={style.animation_dom}>
+      <h2 className={style.title} data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
         Service
       </h2>
 

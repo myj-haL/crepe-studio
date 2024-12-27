@@ -7,19 +7,29 @@ import Process from './Process';
 import ClientReview from './ClientReview';
 import lineArrowIcon from 'images/common/icon-line-arrow.svg';
 import video from 'video/stone_video.mp4';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+import useResponsive from '../../common/hook/Responsive';
 
 function Home() {
+  const screenSize = useResponsive();
+
+  useEffect(() => {
+    AOS.init();
+  }, [screenSize]);
+
   return (
     <Layouts>
       <div className={style.container}>
-        <h3 className={style.left_title}>
+        <h3 className={`${style.left_title} ${style.fadeIn}`} >
           Crafting
           <br />
           New Possibilities
           <br />
           Creativity
         </h3>
-        <h3 className={style.right_title}>
+        <h3 className={`${style.right_title} ${style.fadeIn}`}>
           크레페 스튜디오는 평범한 아이디어를
           <br />
           현실로 실현 가능하게 해주며
@@ -37,8 +47,8 @@ function Home() {
           <video className={style.video_box} autoPlay={true} playsInline={true} muted="muted" loop preload="auto">
             <source src={video} type="video/mp4" />
           </video>
-          <h3 className={style.banner_title}>What We Do</h3>
-          <Link to="#!">
+          <h3 className={style.banner_title} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">What We Do</h3>
+          <Link to="#!" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
             More
             <img alt="arrow icon" src={lineArrowIcon} />
           </Link>
