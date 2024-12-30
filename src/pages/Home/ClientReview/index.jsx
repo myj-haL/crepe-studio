@@ -46,7 +46,7 @@ function ClientReview() {
   }, []);
 
   return (
-    <div className={style.container} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000" ref={countContainer}>
+    <div className={style.container} data-aos="fade-up" data-aos-offset="100" data-aos-duration="2000" ref={countContainer}>
       <h3 className={style.title} >Our results</h3>
 
       <ul className={style.review_list}>

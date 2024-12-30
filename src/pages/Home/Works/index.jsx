@@ -15,10 +15,10 @@ function Works () {
   }, [screenSize]);
 
   return (
-    <div className={style.container} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
-      <h2 className={style.title}>Works</h2>
+    <div className={style.container}>
+      <h2 className={style.title} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500">Works</h2>
 
-      <div className={style.work_slide}>
+      <div className={style.work_slide} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500">
         <Swiper
           slidesPerView={1.3}
           spaceBetween={18}

@@ -47,8 +47,8 @@ function Home() {
           <video className={style.video_box} autoPlay={true} playsInline={true} muted="muted" loop preload="auto">
             <source src={video} type="video/mp4" />
           </video>
-          <h3 className={style.banner_title} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">What We Do</h3>
-          <Link to="#!" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
+          <h3 className={style.banner_title} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500">What We Do</h3>
+          <Link to="#!" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500">
             More
             <img alt="arrow icon" src={lineArrowIcon} />
           </Link>
