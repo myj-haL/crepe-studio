@@ -1,4 +1,5 @@
 import 'swiper/css';
+import 'swiper/css/effect-fade';
 import 'swiper/css/free-mode';
 import 'swiper/css/thumbs';
 import style from './index.module.css';
@@ -8,7 +9,7 @@ import useResponsive from '../../../common/hook/Responsive';
 import { useEffect, useState } from 'react';
 import { process } from './process';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Thumbs, Autoplay } from 'swiper/modules';
+import { FreeMode, Thumbs, Autoplay, EffectFade } from 'swiper/modules';
 
 function Process() {
   const screenSize = useResponsive();
@@ -18,8 +19,9 @@ function Process() {
   }, [screenSize]);
 
   return (
-    <div className={style.container}>
-      <h2 className={style.title} {...(screenSize < 1280 ? { 'data-aos': 'fade-up' } : {})}>
+    // <div className={style.container} {...(screenSize < 1280 ? { 'data-aos': 'fade-up' } : {})} data-aos-offset="100" data-aos-duration="2000">
+    <div className={style.container} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
+      <h2 className={style.title}>
         Process
       </h2>
       {screenSize >= 1280 ? <PcProcess /> : <MobileProcess />}
@@ -33,7 +35,7 @@ export function MobileProcess() {
   return (
     <div className={style.process_list_wrap}>
       {process.map((item) => (
-        <div className={style.list_item} key={item.id} data-aos="fade-up">
+        <div className={style.list_item} key={item.id} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
           <img alt="process img" src={item.img} />
           <div className={style.contents}>
             <h3 className={style.item_title}>
@@ -55,8 +57,12 @@ export function PcProcess() {
     <div className={style.process_list}>
       <Swiper
         thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-        modules={[FreeMode, Thumbs, Autoplay]}
+        modules={[FreeMode, Thumbs, Autoplay, EffectFade]}
         slidesPerView={'auto'}
+        effect={'fade'}
+        fadeEffect={{
+          crossFade:true
+        }}
         className={style.thumb_swipe}
         allowTouchMove={false}
         loop={true}

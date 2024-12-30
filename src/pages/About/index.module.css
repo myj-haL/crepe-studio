@@ -178,7 +178,7 @@
         }
 
         .feature_area {
-            padding: 270px 0 263px;
+            padding: 270px 0 260px;
 
             .items {
                 grid-template-columns: 1fr 0.7fr;
@@ -205,6 +205,10 @@
                     .text_box {
                         order: 2;
                     }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 300px;
                 }
             }
 

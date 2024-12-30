@@ -7,13 +7,17 @@
     text-align: right;
     font-size: 16vw;
     font-weight: 400;
-    margin-bottom: 10.667vw;
+    padding-bottom: 10.667vw;
     line-height: 20.267vw;
+    border-bottom: 2px solid #d9d9d9;
   }
 
   .list_item {
-    border-top: 1px solid #d9d9d9;
     padding: 8vw 0 11.733vw;
+    
+    &:not(:first-child) {
+      border-top: 2px solid #d9d9d9;
+    }
   }
 
   .item_title {
@@ -32,27 +36,36 @@
     margin: 0;
   }
 
+  .animation_dom {
+    position: relative;
+  }
+
   @media screen and (min-width: 1280px) {
-    padding: 105px 0 60px;
+    padding: 105px 0 0;
 
     .title {
       font-size: 154px;
       line-height: 164px;
-      margin-bottom: 42px;
+      padding-bottom: 42px;
     }
 
     .list_item {
-      padding: 72px 0 100px;
+      padding: 72px 0 0;
       position: absolute;
-      height: calc(100% - 300px);
+      /* height: calc(100% - 300px); */
+      height: calc(100% - 112px);
       width: 100%;
+      
+      &:not(:first-child) {
+        border-top: 0;
+      }
 
       .inner_box {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         gap: 100px;
-        top: 42%;
+        top: calc(50% - 72px);
         /* transform: translateY(-50%); */
         position: relative;
       }
@@ -60,7 +73,7 @@
 
     .service_list {
       position: relative;
-      min-height: 100vh;
+      min-height: 70vh;
     }
 
     .item_title {
