@@ -70,7 +70,7 @@ export function PcService() {
             trigger: wrapEl.current,
             scrub: 1,
             start: 'top +=90px',
-            end: '+=2300',
+            end: 'bottom top',
             pin: true,
           },
         })
@@ -89,7 +89,7 @@ export function PcService() {
 
   return (
     <div ref={wrapEl} className={style.animation_dom}>
-      <h2 className={style.title} data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
+      <h2 className={style.title}>
         Service
       </h2>
 
