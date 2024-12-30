@@ -52,7 +52,7 @@ export function MobileService() {
 }
 
 export function PcService() {
-  const wrapEl = useRef();
+  const wrapEl = useRef(null);
   const targetEls = useRef([]);
 
   useGSAP(
@@ -82,7 +82,6 @@ export function PcService() {
         .to(targetEl2, { opacity: 0, y: -20 }, "+=0.5")
         .from(targetEl3, { opacity: 0, y: 20 }, "+=0.5")
         .to(targetEl3, { opacity: 1, y: 0 }, "+=0.5")
-        // .to(targetEl3, { opacity: 0, y: -20 }, "+=0.5");
     },
     { scope: wrapEl.current }
   );
