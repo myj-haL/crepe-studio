@@ -72,7 +72,6 @@ export function PcService() {
             start: 'top +=90px',
             end: 'bottom top',
             pin: true,
-            markers:true
           },
         })
         .from(targetEl1, { opacity: 0, y: 20 })
