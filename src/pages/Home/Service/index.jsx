@@ -70,7 +70,7 @@ export function PcService() {
             trigger: wrapEl.current,
             scrub: 1,
             start: 'top +=90px',
-            end: '+=2000',
+            end: '+=2300',
             pin: true,
           },
         })
