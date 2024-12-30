@@ -2,7 +2,6 @@ import { useRef, useState } from 'react';
 import { contactList } from './contactList';
 import style from './index.module.css';
 import Layouts from '../../common/components/Layouts';
-import emailjs from "@emailjs/browser";
 
 function Contact() {
   const fileRef = useRef();
@@ -16,7 +15,7 @@ function Contact() {
     const fileName = e.target.files[0].name;
     setIsSelectFile(fileName);
   };
-  
+
   //이메일
   const [formData, setFormData] = useState({
     company: '',
@@ -27,39 +26,48 @@ function Contact() {
     message: '',
   });
 
-  const handleEmailSubmit = (e) => {
+  const handleEmailSubmit = async (e) => {
     e.preventDefault();
-
-    const templateParams = {
-      from_company : formData.company,
-      from_name : formData.name,
-      from_email : formData.email,
-      from_call : formData.call,
-      from_site : formData.site,
-      from_attachment : formData.attachment,
-      from_message : formData.message
-    }
-
-    if(!formData.company || !formData.name || !formData.email || !formData.call || !formData.message) {
+  
+    if (!formData.company || !formData.name || !formData.email || !formData.call || !formData.message) {
       alert('필수 항목을 채워주세요.');
       return;
     }
-
-    emailjs
-    .send(process.env.REACT_APP_EMAIL_SERVICE_ID, process.env.REACT_APP_EMAIL_TEMPLATE_ID, templateParams, process.env.REACT_APP_EMAIL_USER_ID)
-    .then(
-    (response) => {
-        console.log('Email sent successfully', response);
-        // setPopupType('success');
-    },
-    (error) => {
-        console.error('Error sending email', error);
-        // setPopupType('error');
-        return;
+  
+    const apiUrl = `${process.env.REACT_APP_API_URL}/contact`; // 환경 변수에서 API URL 생성
+    const formDataToSend = new FormData();
+  
+    formDataToSend.append('organization', formData.company);
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('call', formData.call);
+    formDataToSend.append('site', formData.site);
+    formDataToSend.append('message', formData.message);
+  
+    // 파일 첨부
+    if (fileRef.current.files[0]) {
+      formDataToSend.append('attachment', fileRef.current.files[0]);
     }
-    );
+  
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        body: formDataToSend, // FormData 전송
+      });
+  
+      if (response.ok) {
+        console.log('Email sent successfully');
+        alert('문의가 성공적으로 전송되었습니다.');
+      } else {
+        console.error('Error sending email');
+        alert('문의 전송 중 오류가 발생했습니다.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('서버와의 연결에 실패했습니다.');
+    }
   };
-
+  
 
   const emailHandleChange = (e) => {
     const {name, value} = e.target;
