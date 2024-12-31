@@ -55,6 +55,10 @@ export function PcService() {
   const wrapEl = useRef(null);
   const targetEls = useRef([]);
 
+  setTimeout(() => {
+    ScrollTrigger.refresh(); // 페이지 크기나 레이아웃이 변경될 때 호출
+  }, 0)
+
   useGSAP(
     () => {
       const targetEl1 = targetEls.current[0];
@@ -69,9 +73,14 @@ export function PcService() {
           scrollTrigger: {
             trigger: wrapEl.current,
             scrub: 1,
-            start: 'top +=90px',
+            start: 'top top',
             end: 'bottom top',
             pin: true,
+            onEnter: () => {
+              setTimeout(() => {
+                ScrollTrigger.refresh(); // 페이지 크기나 레이아웃이 변경될 때 호출
+              }, 0)
+            },
           },
         })
         .from(targetEl1, { opacity: 0, y: 20 })
@@ -81,7 +90,7 @@ export function PcService() {
         .to(targetEl2, { opacity: 1, y: 0 }, "+=0.5")
         .to(targetEl2, { opacity: 0, y: -20 }, "+=0.5")
         .from(targetEl3, { opacity: 0, y: 20 }, "+=0.5")
-        .to(targetEl3, { opacity: 1, y: 0 }, "+=0.5")
+        .to(targetEl3, { opacity: 1, y: 0 }, "+=0.5");
     },
     { scope: wrapEl.current }
   );

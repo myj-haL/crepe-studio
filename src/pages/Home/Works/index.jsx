@@ -18,7 +18,7 @@ function Works () {
     <div className={style.container}>
       <h2 className={style.title} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500">Works</h2>
 
-      <div className={style.work_slide} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500">
+      <div className={style.work_slide}>
         <Swiper
           slidesPerView={1.3}
           spaceBetween={18}
