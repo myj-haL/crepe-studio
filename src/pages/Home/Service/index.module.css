@@ -41,7 +41,11 @@
   }
 
   @media screen and (min-width: 1280px) {
-    padding: 105px 0 0;
+    padding: 0;
+
+    .animation_dom {
+      padding-top:90px;
+    }
 
     .title {
       font-size: 154px;
@@ -74,6 +78,7 @@
     .service_list {
       position: relative;
       min-height: 75vh;
+      height: 75vh;
     }
 
     .item_title {
