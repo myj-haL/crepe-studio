@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/crepe-studio/static/css/main.25f4bbd4.css",
-    "main.js": "/crepe-studio/static/js/main.bf81ca5c.js",
-    "static/css/698.10efb749.chunk.css": "/crepe-studio/static/css/698.10efb749.chunk.css",
-    "static/js/698.cae8947b.chunk.js": "/crepe-studio/static/js/698.cae8947b.chunk.js",
+    "main.js": "/crepe-studio/static/js/main.3b4ec932.js",
+    "static/css/698.eb29ad38.chunk.css": "/crepe-studio/static/css/698.eb29ad38.chunk.css",
+    "static/js/698.f76dde08.chunk.js": "/crepe-studio/static/js/698.f76dde08.chunk.js",
     "static/css/325.892c9f2f.chunk.css": "/crepe-studio/static/css/325.892c9f2f.chunk.css",
     "static/js/325.a0203967.chunk.js": "/crepe-studio/static/js/325.a0203967.chunk.js",
     "static/css/366.d89d51de.chunk.css": "/crepe-studio/static/css/366.d89d51de.chunk.css",
     "static/js/366.19c6fcc5.chunk.js": "/crepe-studio/static/js/366.19c6fcc5.chunk.js",
     "static/css/162.4786159e.chunk.css": "/crepe-studio/static/css/162.4786159e.chunk.css",
     "static/js/162.09590622.chunk.js": "/crepe-studio/static/js/162.09590622.chunk.js",
-    "static/css/142.909e4396.chunk.css": "/crepe-studio/static/css/142.909e4396.chunk.css",
-    "static/js/142.b5bc945b.chunk.js": "/crepe-studio/static/js/142.b5bc945b.chunk.js",
+    "static/css/9.da61e763.chunk.css": "/crepe-studio/static/css/9.da61e763.chunk.css",
+    "static/js/9.79f729df.chunk.js": "/crepe-studio/static/js/9.79f729df.chunk.js",
     "static/js/787.2a93110a.chunk.js": "/crepe-studio/static/js/787.2a93110a.chunk.js",
     "static/js/95.ce4a7bc5.chunk.js": "/crepe-studio/static/js/95.ce4a7bc5.chunk.js",
     "static/css/421.d53b253e.chunk.css": "/crepe-studio/static/css/421.d53b253e.chunk.css",
@@ -40,17 +40,17 @@
     "static/media/close.svg": "/crepe-studio/static/media/close.966d4d7bb91ceee2ba22823826ede15c.svg",
     "static/media/icon-line-arrow.svg": "/crepe-studio/static/media/icon-line-arrow.56aaa681f459c85cabd726d569f63341.svg",
     "main.25f4bbd4.css.map": "/crepe-studio/static/css/main.25f4bbd4.css.map",
-    "main.bf81ca5c.js.map": "/crepe-studio/static/js/main.bf81ca5c.js.map",
-    "698.10efb749.chunk.css.map": "/crepe-studio/static/css/698.10efb749.chunk.css.map",
-    "698.cae8947b.chunk.js.map": "/crepe-studio/static/js/698.cae8947b.chunk.js.map",
+    "main.3b4ec932.js.map": "/crepe-studio/static/js/main.3b4ec932.js.map",
+    "698.eb29ad38.chunk.css.map": "/crepe-studio/static/css/698.eb29ad38.chunk.css.map",
+    "698.f76dde08.chunk.js.map": "/crepe-studio/static/js/698.f76dde08.chunk.js.map",
     "325.892c9f2f.chunk.css.map": "/crepe-studio/static/css/325.892c9f2f.chunk.css.map",
     "325.a0203967.chunk.js.map": "/crepe-studio/static/js/325.a0203967.chunk.js.map",
     "366.d89d51de.chunk.css.map": "/crepe-studio/static/css/366.d89d51de.chunk.css.map",
     "366.19c6fcc5.chunk.js.map": "/crepe-studio/static/js/366.19c6fcc5.chunk.js.map",
     "162.4786159e.chunk.css.map": "/crepe-studio/static/css/162.4786159e.chunk.css.map",
     "162.09590622.chunk.js.map": "/crepe-studio/static/js/162.09590622.chunk.js.map",
-    "142.909e4396.chunk.css.map": "/crepe-studio/static/css/142.909e4396.chunk.css.map",
-    "142.b5bc945b.chunk.js.map": "/crepe-studio/static/js/142.b5bc945b.chunk.js.map",
+    "9.da61e763.chunk.css.map": "/crepe-studio/static/css/9.da61e763.chunk.css.map",
+    "9.79f729df.chunk.js.map": "/crepe-studio/static/js/9.79f729df.chunk.js.map",
     "787.2a93110a.chunk.js.map": "/crepe-studio/static/js/787.2a93110a.chunk.js.map",
     "95.ce4a7bc5.chunk.js.map": "/crepe-studio/static/js/95.ce4a7bc5.chunk.js.map",
     "421.d53b253e.chunk.css.map": "/crepe-studio/static/css/421.d53b253e.chunk.css.map",
@@ -60,6 +60,6 @@
   },
   "entrypoints": [
     "static/css/main.25f4bbd4.css",
-    "static/js/main.bf81ca5c.js"
+    "static/js/main.3b4ec932.js"
   ]
 }
