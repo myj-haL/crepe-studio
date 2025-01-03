@@ -6,7 +6,7 @@ import Service from './Service';
 import Process from './Process';
 import ClientReview from './ClientReview';
 import lineArrowIcon from 'images/common/icon-line-arrow.svg';
-import video from 'video/stone_video_new.mp4'; 
+import video from 'video/stone_video.mp4'; 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
