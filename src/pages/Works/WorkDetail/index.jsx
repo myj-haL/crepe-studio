@@ -7,6 +7,7 @@ import NoData from "../../../common/components/NoData";
 import Layouts from "../../../common/components/Layouts";
 
 function WorkDetail () {
+    /* 기록용 */
     const [detailPost, setDetailPost] = useState();
     // const postId = window.location.pathname.split("/").pop();
     const params = useParams();
