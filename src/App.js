@@ -7,7 +7,8 @@ const About = lazy(() => import("./pages/About"));
 const Works = lazy(() => import("./pages/Works"));
 const WorkDetail = lazy(() => import("./pages/Works/WorkDetail"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Login = lazy(() => import("./pages/Login"));;
+const Login = lazy(() => import("./pages/Login"));
+const WorkWrite = lazy(() => import("./pages/Works/WorkWrite"));
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/works" element={<Works />} />
+            <Route path="/works/write" element={<WorkWrite />} />
             <Route path="/works/detail/:id" element={<WorkDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Login />} />

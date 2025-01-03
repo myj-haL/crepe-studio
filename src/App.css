@@ -68,6 +68,7 @@ body {
   word-break: keep-all;
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  color: #fff;
 }
 
 body {
