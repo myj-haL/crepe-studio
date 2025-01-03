@@ -1,41 +1,39 @@
 import style from "./index.module.css";
-import { database } from "../../../firebaseConfig";
-import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore/lite";
-import { useParams } from "react-router-dom";
-import NoData from "../../../common/components/NoData";
 import Layouts from "../../../common/components/Layouts";
+import sampleVisual from "images/sample/floor-banner.png";
+import sampleImg from "images/sample/sample_cat.webp";
 
 function WorkDetail () {
-    /* 기록용 */
-    const [detailPost, setDetailPost] = useState();
-    // const postId = window.location.pathname.split("/").pop();
-    const params = useParams();
-
-    async function getDetailDocuments() {
-        const docRef = doc(database, "crepeWorks", params.id);
-        const docSnap = await getDoc(docRef);
-
-        return docSnap.data();
-    }
-
-    useEffect(() => {
-        getDetailDocuments().then(data => {
-            setDetailPost(data);
-        });
-    }, []);
-
     return (
         <Layouts>
             <div className={style.container}>
-                {detailPost ? 
-                    <>
-                        {detailPost.title}
-                        {detailPost.category}
-                    </>
-                    :
-                    <NoData />
-                }
+                <img alt="visual banner" src={sampleVisual} />
+
+                <div className={style.contents}>
+                    <div className={style.left}>
+                        <h3 className={style.title}>Post Title</h3>
+                        <p className={style.content}>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam illum exercitationem a magnam expedita voluptatum pariatur, necessitatibus dignissimos perferendis quibusdam quaerat iste, voluptate quia nobis doloribus nulla possimus velit nisi, enim neque reiciendis rerum debitis iure! Nemo dignissimos quibusdam nesciunt possimus ipsa cum asperiores illum qui, sit sint facilis porro.
+                        </p>
+                    </div>
+                    <div className={style.right}>
+                        <h3 className={style.categorys}>Service</h3>
+                        <span>
+                            <p className={style.category_item}>UX/UI Design</p>
+                            <p className={style.category_item}>WebPublishing</p>
+                            <p className={style.category_item}>Branding</p>
+                        </span>
+                    </div>
+                </div>
+
+                {/* TODO : 첨부한 사진 5개 */}
+                <div className={style.file_img}>
+                    {
+                        Array(5).fill('').map((item, i) => (
+                            <img alt="img" src={sampleImg} />
+                        ))
+                    }
+                </div>      
             </div>
         </Layouts>
     )
