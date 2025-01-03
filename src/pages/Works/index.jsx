@@ -1,48 +1,28 @@
-import { useEffect, useState } from "react";
 import style from "./index.module.css";
-import { database } from "../../firebaseConfig";
 import Layouts from '../../common/components/Layouts/index';
-import { getDocs , collection, query } from "firebase/firestore/lite";
+import sampleThumbnail from "images/sample/floor-banner.png";
 import { Link } from "react-router-dom";
 
+//게시판 목록
 function Works () {
-    // const [postData, setPostData] = useState([]);
-
-    // async function getDocuments() {
-        // const q = query(collection(database, "crepeWorks"));
-        // const querySnapshot = await getDocs(q);
-        // const temp = querySnapshot.docs.map((doc) => ({
-        //     id:doc.id,
-        //     ...doc.data()
-        // }));
-
-        // return temp;
-        // let temp = [];
-
-        // querySnapshot.forEach((doc) => {
-        //     temp.push(doc.data())
-        //     });
-        // return temp;
-    // }
-
-    // useEffect(() => {
-    //     getDocuments().then(data => {
-    //         setPostData(data);
-    //     });
-    // }, []);
-
     return (
         <Layouts>
             <div className={style.container}>
-                <h3 className={style.title}>Board List</h3>
-                <ul>
-                    {/* {postData.map(post => (
-                        <div key={post.id}>
-                            <Link to={`detail/${post.id}`}>{post.postTitle}</Link>
-                        </div>
-                    ))} */}
-                    
-
+                <ul className={style.post_list}>
+                    {/* TODO : li 가 반복 / 아래 array 는 임시 더미 리스트 구현하기 위함. */}
+                    {
+                        Array(7).fill('').map((li, i) => (
+                            <li className={style.post_item} key="">
+                                <Link to="">
+                                    <img alt="post thumbnail" src={sampleThumbnail} />
+                                    <div className={style.title_box}>
+                                        <h3 className={style.post_title}>POST TITLE</h3>
+                                        <p className={style.category}>UX / UI / Web Publishing</p>
+                                    </div>
+                                </Link>
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
         </Layouts>
