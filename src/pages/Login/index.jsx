@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import style from "./index.module.css";
 import Layouts from "../../common/components/Layouts";
 import logo from "images/common/logo.svg";
@@ -7,6 +8,15 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate(); // useNavigate 사용
+
+  // ✅ 로그인 상태 확인 후 리디렉션
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    if (token) {
+      navigate("/works", { replace: true }); // 이미 로그인된 경우 자동 이동
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,7 +46,7 @@ function Login() {
       localStorage.setItem("accessToken", data.accessToken);
 
       alert("Login successful!");
-      window.location.href = "/works";
+      navigate("/works", { replace: true });
     } catch (err) {
       console.error(err.message);
       alert(err.message);
