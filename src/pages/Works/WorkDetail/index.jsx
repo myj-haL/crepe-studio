@@ -2,6 +2,7 @@ import style from "./index.module.css";
 import Layouts from "../../../common/components/Layouts";
 import sampleVisual from "images/sample/floor-banner.png";
 import sampleImg from "images/sample/sample_cat.webp";
+import { Link } from "react-router-dom";
 
 function WorkDetail () {
     return (
@@ -23,6 +24,10 @@ function WorkDetail () {
                             <p className={style.category_item}>WebPublishing</p>
                             <p className={style.category_item}>Branding</p>
                         </span>
+
+                        <Link to="" className={style.site_link}>
+                            Website
+                        </Link>
                     </div>
                 </div>
 
@@ -34,6 +39,10 @@ function WorkDetail () {
                         ))
                     }
                 </div>      
+
+                <Link to="" className={style.backto_list}>
+                    More Works
+                </Link>
             </div>
         </Layouts>
     )

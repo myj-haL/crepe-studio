@@ -12,7 +12,7 @@ const WorkWrite = lazy(() => import("./pages/Works/WorkWrite"));
 
 function App() {
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/crepe-studio">
       <Suspense fallback={<div className="loading">Loading...</div>}>
         <Routes>
             <Route path="/" element={<Home />} />

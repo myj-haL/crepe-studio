@@ -13,11 +13,19 @@ function Works () {
                     {
                         Array(7).fill('').map((li, i) => (
                             <li className={style.post_item} key="">
-                                <Link to="">
+                                <Link to="" className={style.post_link}>
+                                    
+
                                     <img alt="post thumbnail" src={sampleThumbnail} />
                                     <div className={style.title_box}>
                                         <h3 className={style.post_title}>POST TITLE</h3>
                                         <p className={style.category}>UX / UI / Web Publishing</p>
+
+                                        <div className={style.edit_btns}>
+                                            <button type="button" className={style.del}>삭제</button>
+                                            /
+                                            <button type="button" className={style.edit}>수정</button>
+                                        </div>
                                     </div>
                                 </Link>
                             </li>
