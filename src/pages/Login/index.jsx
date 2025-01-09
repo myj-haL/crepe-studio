@@ -14,7 +14,7 @@ function Login() {
   useEffect(() => {
     const token = localStorage.getItem("accessToken");
     if (token) {
-      navigate("/works", { replace: true }); // 이미 로그인된 경우 자동 이동
+      navigate('/works', { replace: true });
     }
   }, [navigate]);
 

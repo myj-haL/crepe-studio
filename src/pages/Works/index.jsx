@@ -4,7 +4,9 @@ import sampleThumbnail from "images/sample/floor-banner.png";
 import { Link } from "react-router-dom";
 
 //게시판 목록
-function Works () {
+function Works() {
+    const token = localStorage.getItem("accessToken"); // 로그인 여부 확인
+
     return (
         <Layouts>
             <div className={style.container}>
@@ -14,18 +16,21 @@ function Works () {
                         Array(7).fill('').map((li, i) => (
                             <li className={style.post_item} key="">
                                 <Link to="" className={style.post_link}>
-                                    
+
 
                                     <img alt="post thumbnail" src={sampleThumbnail} />
                                     <div className={style.title_box}>
                                         <h3 className={style.post_title}>POST TITLE</h3>
                                         <p className={style.category}>UX / UI / Web Publishing</p>
 
-                                        <div className={style.edit_btns}>
-                                            <button type="button" className={style.del}>삭제</button>
-                                            /
-                                            <button type="button" className={style.edit}>수정</button>
-                                        </div>
+                                        {/* 🔥 로그인한 유저만 수정/삭제 버튼 보이도록 조건부 렌더링 */}
+                                        {token && (
+                                            <div className={style.edit_btns}>
+                                                <button type="button" className={style.del}>삭제</button>
+                                                /
+                                                <button type="button" className={style.edit}>수정</button>
+                                            </div>
+                                        )}
                                     </div>
                                 </Link>
                             </li>
