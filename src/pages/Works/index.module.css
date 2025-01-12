@@ -64,6 +64,20 @@
         }
     }
 
+    .write_btn {
+        color: #fff;
+        width: 150px;
+        height: 62px;
+        margin: 0 0 30px auto;
+        display: block;
+        border: 1px solid #fff;
+        line-height: 62px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        box-sizing: border-box;
+    }
+
     @media screen and (min-width:1280px) {
         padding: 170px 55px 200px;
 
@@ -89,6 +103,12 @@
             p {
                 font-size: 20px;
             }
+        }
+
+        .write_btn {
+            width: 170px;
+            font-size: 18px;
+            margin-bottom: 80px;
         }
     }
 }

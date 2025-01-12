@@ -10,6 +10,9 @@ function Works() {
     return (
         <Layouts>
             <div className={style.container}>
+                {/* TODO : 관리자 계정에서만 노출 */}
+                <button type="button" className={style.write_btn}>Write</button>
+
                 <ul className={style.post_list}>
                     {/* TODO : li 가 반복 / 아래 array 는 임시 더미 리스트 구현하기 위함. */}
                     {
