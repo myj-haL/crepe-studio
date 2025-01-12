@@ -15,8 +15,16 @@ function Works () {
   }, [screenSize]);
 
   return (
-    <div className={style.container}>
-      <h2 className={style.title} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500">Works</h2>
+    <div className={style.container} {...(screenSize < 1280 ? {
+      'data-aos':"fade-up",
+      'data-aos-offset':"100",
+      'data-aos-duration':"1500"
+    } : {})}>
+      <h2 className={style.title} {...(screenSize >=1280 ? {
+        'data-aos':"fade-up",
+        'data-aos-offset':"100",
+        'data-aos-duration':"1500"
+      } : {})}>Works</h2>
 
       <div className={style.work_slide}>
         <Swiper

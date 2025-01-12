@@ -9,6 +9,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import useResponsive from "../../common/hook/Responsive";
 import { useEffect } from "react";
+import topVideo from "video/about_hero.mp4";
 
 function About () {
     const screenSize = useResponsive();
@@ -48,6 +49,10 @@ function About () {
         <Layouts>
             <div className={style.container}>
                 <div className={style.visual_area}>
+                    <video autoPlay={true} playsInline={true} muted="muted" loop preload="auto" className={style.video_track}>
+                        <source src={topVideo} type="video/mp4" />
+                    </video>
+
                     <h3 className={style.title}>
                         Crafting<br/>
                         New Possibilities<br />
