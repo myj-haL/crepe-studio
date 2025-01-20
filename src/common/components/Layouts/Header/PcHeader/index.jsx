@@ -14,6 +14,12 @@ function PcHeader() {
       </Link>
 
       <ul className={style.menu_list}>
+        {/* TODO : 어드민일경우 로그인 했을때만 노출합니다. */}
+        <li className={style.logout}>
+          <Link>
+            LogOut
+          </Link>
+        </li>
         {menuList.map((item) => (
           <li className={`${style.menu_item} ${location.pathname.includes(item.src) ? style.active : ""}`} key={item.id}>
             <Link to={item.src}>{item.name}</Link>
