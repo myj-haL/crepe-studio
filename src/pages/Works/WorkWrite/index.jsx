@@ -190,15 +190,6 @@ function WorkWrite() {
               </span>
 
               <ul className={style.sub_img_list}>
-                {subImages.map((image, index) => (
-                  <li key={index}>
-                    <img
-                      alt={`sub ${index}`}
-                      src={URL.createObjectURL(image)}
-                      className={style.sub_img}
-                    />
-                  </li>
-                ))}
                 {subImages.length < 5 && (
                   <li onClick={triggerSubImageInput}>
                     <div className={style.text_box}>
@@ -216,6 +207,15 @@ function WorkWrite() {
                     </div>
                   </li>
                 )}
+                {subImages.map((image, index) => (
+                  <li key={index}>
+                    <img
+                      alt={`sub ${index}`}
+                      src={URL.createObjectURL(image)}
+                      className={style.sub_img}
+                    />
+                  </li>
+                ))}
               </ul>
             </div>
 
