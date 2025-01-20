@@ -14,6 +14,30 @@ function Works() {
         navigate("/works/write");
     };
 
+    // 게시글 삭제 핸들러
+    const handleDeleteClick = async (e, uuid) => {
+        e.preventDefault(); // 기본 링크 이동 방지
+
+        try {
+            const API_URL = process.env.REACT_APP_API_URL;
+            const response = await fetch(`${API_URL}/content/${uuid}`, {
+                method: 'DELETE',
+            });
+
+            if (response.ok) {
+                // 삭제된 게시글을 상태에서 제거
+                setPosts((prevPosts) => prevPosts.filter((post) => post.uuid !== uuid));
+                alert("Post deleted successfully!");
+            } else {
+                const errorData = await response.json();
+                alert(`Error: ${errorData.message}`);
+            }
+        } catch (error) {
+            console.error('Error deleting post:', error);
+            alert('Failed to delete the post.');
+        }
+    };
+
     // API 호출하여 데이터 가져오기
     useEffect(() => {
         const fetchPosts = async () => {
@@ -51,9 +75,9 @@ function Works() {
                 ) : (
                     <ul className={style.post_list}>
                         {/* API에서 받은 데이터 반복 */}
-                        {posts.map((post, index) => (
-                            <li className={style.post_item} key={post._id}>
-                                <Link to={`/works/${post._id}`} className={style.post_link}>
+                        {posts.map((post) => (
+                            <li className={style.post_item} key={post.uuid}>
+                                <Link to={`/works/${post.uuid}`} className={style.post_link}>
                                     <img alt="post thumbnail" src={post.mainImage} />
                                     <div className={style.title_box}>
                                         <h3 className={style.post_title}>{post.title}</h3>
@@ -64,9 +88,17 @@ function Works() {
                                         {/* 로그인한 유저만 수정/삭제 버튼 노출 */}
                                         {token && (
                                             <div className={style.edit_btns}>
-                                                <button type="button" className={style.del}>삭제</button>
+                                                <button
+                                                    type="button"
+                                                    className={style.del}
+                                                    onClick={(e) => handleDeleteClick(e, post.uuid)} // 삭제 버튼 클릭 시 handleDeleteClick 호출
+                                                >
+                                                    삭제
+                                                </button>
                                                 /
-                                                <button type="button" className={style.edit}>수정</button>
+                                                <button type="button" className={style.edit}>
+                                                    수정
+                                                </button>
                                             </div>
                                         )}
                                     </div>

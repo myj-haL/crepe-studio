@@ -65,7 +65,7 @@ function Works() {
           className={style.works_swipe}
         >
           {worksData.map((item) => (
-            <SwiperSlide key={item._id} className={style.slide_item}>
+            <SwiperSlide key={item.uuid} className={style.slide_item}>
               <a href={item.link}>
                 <div className={style.inner}>
                   <img alt="thumbnail" src={item.mainImage} />
