@@ -15,12 +15,12 @@ function Footer() {
             사업자등록번호 : 203-2933-20392
             <br />
           </li>
-          <li className={style.info_item}>전화번호 : 02-203-2223</li>
-          <li className={style.info_item}>이메일 : minibim@gmail.com</li>
+          {/* <li className={style.info_item}>전화번호 : 02-203-2223</li> */}
+          <li className={style.info_item}>이메일 : crepestudio@gmail.com</li>
           <li className={style.info_item}>주소 : 서울특별시 서대문구 어디오 12층</li>
         </ul>
 
-        <p className={style.copyright}>© 2024 Minibim Inc. All rights reserved.</p>
+        <p className={style.copyright}>© 2025 Crepestudio Inc. All rights reserved.</p>
 
         <div className={style.sns_box}>
           {snsList.map((item) => (

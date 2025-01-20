@@ -97,7 +97,7 @@ function Contact() {
                     {item.type === 'file' ? (
                       <label htmlFor="fileName">
                         <input
-                          type="texet"
+                          type="text"
                           readOnly
                           placeholder={isSelectFile ? '' : item.placeHolder}
                           value={isSelectFile && isSelectFile}
