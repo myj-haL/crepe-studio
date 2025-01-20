@@ -1,10 +1,18 @@
 import { menuList } from '../menuList';
 import logo from 'images/common/logo.svg';
 import style from './index.module.css';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function PcHeader() {
   const location = useLocation();
+  const navigate = useNavigate(); // useNavigate 훅 사용
+  const accessToken = localStorage.getItem('accessToken'); // localStorage에서 토큰 가져오기
+
+  const handleLogout = (e) => {
+    e.preventDefault(); // 기본 동작 방지
+    localStorage.removeItem('accessToken'); // accessToken 삭제
+    navigate('/'); // React Router로 경로 이동
+  };
 
   return (
     <div className={style.container}>
@@ -14,14 +22,21 @@ function PcHeader() {
       </Link>
 
       <ul className={style.menu_list}>
-        {/* TODO : 어드민일경우 로그인 했을때만 노출합니다. */}
-        <li className={style.logout}>
-          <Link>
-            LogOut
-          </Link>
-        </li>
+        {/* LogOut 버튼 */}
+        {accessToken && ( // 조건부 렌더링
+          <li>
+            <Link onClick={handleLogout}>
+              LogOut
+            </Link>
+          </li>
+        )}
+        {/* 메뉴 리스트 */}
         {menuList.map((item) => (
-          <li className={`${style.menu_item} ${location.pathname.includes(item.src) ? style.active : ""}`} key={item.id}>
+          <li
+            className={`${style.menu_item} ${location.pathname.includes(item.src) ? style.active : ""
+              }`}
+            key={item.id}
+          >
             <Link to={item.src}>{item.name}</Link>
           </li>
         ))}
