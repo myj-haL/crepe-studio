@@ -2,7 +2,6 @@ import style from "./index.module.css";
 import Layouts from "../../../common/components/Layouts";
 import { useParams } from "react-router-dom"; // useParams를 사용하여 URL 파라미터 받기
 import { useState, useEffect } from "react";
-import sampleImg from "images/sample/sample_cat.webp"; // 임시 이미지
 
 function WorkDetail() {
     const { uuid } = useParams(); // URL에서 uuid를 받아옵니다.
@@ -45,7 +44,7 @@ function WorkDetail() {
         <Layouts>
             <div className={style.container}>
                 {/* 임시로 사용한 배너 이미지 */}
-                <img alt="visual banner" src={sampleImg} />
+                <img alt="visual banner" src={post.mainImage} />
 
                 <div className={style.contents}>
                     <div className={style.left}>
