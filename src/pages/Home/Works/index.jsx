@@ -19,7 +19,7 @@ function Works() {
         const response = await fetch(`${API_URL}/content/list`); // API 엔드포인트 호출 (이 부분을 실제 API URL로 변경)
         if (response.ok) {
           const data = await response.json();
-          setWorksData(data.slice(0, 4)); // 첫 4개 항목만 가져오기
+          setWorksData(data.slice(0, 5));
         } else {
           console.error("Error fetching data");
         }
