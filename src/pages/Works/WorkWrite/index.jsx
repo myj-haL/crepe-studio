@@ -5,6 +5,7 @@ import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.snow.css';
 import addImageIcon from "images/board/icon-add-image.svg";
 import Check from "@components/Check";
+import { useNavigate } from "react-router-dom";
 
 function WorkWrite() {
   // State for collecting form data
@@ -18,6 +19,8 @@ function WorkWrite() {
   // Refs for file inputs
   const mainImageInputRef = useRef(null);
   const subImageInputRef = useRef(null);
+
+  const navigate = useNavigate();
 
   // Toolbar configuration for ReactQuill
   const modules = {
@@ -52,6 +55,7 @@ function WorkWrite() {
 
       if (response.ok) {
         alert("Content successfully uploaded!");
+        navigate("/works");
       } else {
         const errorData = await response.json();
         alert(`Error: ${errorData.message}`);
@@ -178,8 +182,6 @@ function WorkWrite() {
                 </div>
               </div>
             </div>
-
-
 
             <div className={style.write_box}>
               <span>
