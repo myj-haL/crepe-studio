@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Layouts from "../../../common/components/Layouts";
 import style from "./index.module.css";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import ReactQuill from 'react-quill-new';
+import 'react-quill-new/dist/quill.snow.css';
 import addImageIcon from "images/board/icon-add-image.svg";
 import samepleImg from "images/sample/sample_cat.webp";
+import Check from "@components/Check";
 
 function WorkWrite () {
   const [value, setValue] = useState('');
@@ -24,7 +25,27 @@ function WorkWrite () {
         <div className={style.inner}>
           <h3 className={style.title}>Content Registration</h3>
 
-          <form onSubmit="" className={style.form_box}>
+          <form className={style.form_box}>
+            <div className={style.write_box}>
+              <span>Title</span>
+              <input type="text" name="" id="" placeholder="Please enter the title." />
+            </div>
+
+            <div className={style.write_box}>
+              <span>Services</span>
+              <div className={style.check_form_list}> 
+                <Check content={"Branding"} id={"branding"} />
+                <Check content={"UX/UI Design"} id={"design"} />
+                <Check content={"Web Publishing"} id={"publishing"} />
+              </div>
+            </div>
+
+            <div className={style.write_box}>
+              <span>Link</span>
+              <input type="text" name="" id="" placeholder="Please enter the link." />
+            </div>
+
+
             <div className={style.write_box}>
               <span>Content Details</span>
               <ReactQuill modules={modules} value={value} onChange={setValue} className={style.editor} placeholder="Please enter the contents." />

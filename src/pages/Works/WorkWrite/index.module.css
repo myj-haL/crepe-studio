@@ -76,6 +76,17 @@
         color: #898989;
       }
     }
+
+    input[type="text"] {
+      appearance: none;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #fff;
+      box-sizing: border-box;
+      width: 100%;
+      color: #fff;
+      font-size: 4vw;
+      line-height: 34px;
+    }
   }
 
   .img_box,
@@ -129,8 +140,17 @@
     }
   }
 
+  .check_form_list {
+    display: grid;
+    gap: 10px;
+  }
+
   @media screen and (min-width:1280px) {
     padding: 162px 55px;
+
+    .check_form_list {
+      gap: 15px;
+    }
 
     .editor  {
       height: 500px;
@@ -158,6 +178,10 @@
         p {
           font-size: 21px;
         }
+      }
+
+      input[type="text"] {
+        font-size: 18px;
       }
     }
 
