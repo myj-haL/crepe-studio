@@ -1,10 +1,11 @@
 import style from "./index.module.css";
 import Layouts from "../../../common/components/Layouts";
-import { useParams } from "react-router-dom"; // useParams를 사용하여 URL 파라미터 받기
+import { useParams, useNavigate } from "react-router-dom"; // useParams를 사용하여 URL 파라미터 받기
 import { useState, useEffect } from "react";
 
 function WorkDetail() {
     const { uuid } = useParams(); // URL에서 uuid를 받아옵니다.
+    const navigate = useNavigate(); // useNavigate 훅 초기화
     const [post, setPost] = useState(null); // 게시물 데이터를 저장할 상태
     const [loading, setLoading] = useState(true); // 로딩 상태
 
@@ -72,9 +73,9 @@ function WorkDetail() {
                     ))}
                 </div>
 
-                <a href="/works" className={style.backto_list}>
+                <button type="button" onClick={() => navigate("/works")} className={style.backto_list}>
                     More Works
-                </a>
+                </button>
             </div>
         </Layouts>
     );
