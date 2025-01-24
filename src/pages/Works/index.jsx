@@ -14,6 +14,12 @@ function Works() {
         navigate("/works/write");
     };
 
+    // 수정 페이지로 이동하는 핸들러
+    const handleEditClick = (e, uuid) => {
+        e.preventDefault(); // 기본 링크 이동 방지
+        navigate(`/works/${uuid}/edit`); // 수정 페이지로 이동
+    };
+
     // 게시글 삭제 핸들러
     const handleDeleteClick = async (e, uuid) => {
         e.preventDefault(); // 기본 링크 이동 방지
@@ -96,7 +102,11 @@ function Works() {
                                                     삭제
                                                 </button>
                                                 /
-                                                <button type="button" className={style.edit}>
+                                                <button
+                                                    type="button"
+                                                    className={style.edit}
+                                                    onClick={(e) => handleEditClick(e, post.uuid)} // 수정 버튼 클릭 시 handleEditClick 호출
+                                                >
                                                     수정
                                                 </button>
                                             </div>

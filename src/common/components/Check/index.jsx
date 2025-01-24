@@ -1,6 +1,6 @@
 import style from "./index.module.css";
 
-function Check({ content, id, onChange }) {
+function Check({ content, id, checked, onChange }) { // checked 속성 추가
   return (
     <label htmlFor={id} className={style.check_form}>
       <input
@@ -8,7 +8,8 @@ function Check({ content, id, onChange }) {
         name="check"
         id={id}
         className={style.true_check}
-        onChange={onChange} // onChange 이벤트 핸들러 추가
+        onChange={onChange} // onChange 이벤트 핸들러
+        checked={checked} // checked 상태 반영
       />
       <div className={style.fake_check}></div>
       <p>{content}</p>
