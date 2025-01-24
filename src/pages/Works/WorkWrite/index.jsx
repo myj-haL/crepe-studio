@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Layouts from "../../../common/components/Layouts";
 import style from "./index.module.css";
 import ReactQuill from 'react-quill-new';
@@ -21,6 +21,14 @@ function WorkWrite() {
   const subImageInputRef = useRef(null);
 
   const navigate = useNavigate();
+
+  // Check login status and redirect if not logged in
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    if (!token) {
+      navigate("/", { replace: true });
+    }
+  }, [navigate]);
 
   // Toolbar configuration for ReactQuill
   const modules = {
