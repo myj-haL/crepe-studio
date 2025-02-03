@@ -1,172 +1,172 @@
 .container {
+  color: #fff;
+  padding: 90px 16px 72px;
+  box-sizing: border-box;
+  height: 100%;
+
+  > img {
+    width: 100%;
+    height: calc((100vw * 276) / 390);
+    display: block;
+    margin-bottom: 24px;
+    object-fit: cover;
+  }
+
+  .contents {
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+  }
+
+  .left .title,
+  .right .categorys {
+    font-size: 7.467vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     color: #fff;
-    padding:90px 16px 72px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .left .content,
+  .right .category_item {
+    font-size: 4.267vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 7.467vw;
+    color: #a4a4a4;
+  }
+
+  .file_img {
+    display: grid;
+    gap: 16px;
+    margin-top: 99px;
+
+    img {
+      width: 100%;
+      height: calc((100vw * 276) / 390);
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  .site_link {
+    width: 34.667vw;
+    height: 11.733vw;
+    font-size: 3.733vw;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+    border: 1px solid #fff;
+    display: block;
+    text-align: center;
+    line-height: 11.733vw;
+    margin-top: 10.667vw;
     box-sizing: border-box;
-    height: 100%;
+  }
+
+  .backto_list {
+    color: #fff;
+    width: 150px;
+    height: 62px;
+    margin: 100px auto 0;
+    display: block;
+    border: 1px solid #fff;
+    line-height: 62px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 170px 55px 190px;
 
     > img {
-        width: 100%;
-        height: calc((100vw * 276) / 390);
-        display: block;
-        margin-bottom: 24px;
-        object-fit: cover;
+      height: calc((100vw * 820) / 1920);
+      max-height: 820px;
+      margin-bottom: 80px;
     }
 
     .contents {
-        display: flex;
-        flex-direction: column;
-        gap: 52px;
+      gap: 16px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+      min-height: 457px;
     }
 
     .left .title,
     .right .categorys {
-        font-size: 7.467vw;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        color: #fff;
-        margin-bottom: 16px;
-        display: block;
+      margin-bottom: 20px;
+      font-size: 58px;
     }
 
     .left .content,
     .right .category_item {
-        font-size: 4.267vw;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 7.467vw;
-        color: #A4A4A4;
+      font-size: 30px;
+      line-height: 60px;
+    }
+
+    .left {
+      flex: 1;
+      flex: 0 0 75%;
+    }
+
+    .right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
     }
 
     .file_img {
-        display: grid;
-        gap: 16px;
-        margin-top: 99px;
+      gap: 24px;
+      grid-template-areas:
+        'img1 img1 img2'
+        'img3 img3 img3'
+        'img4 img5 img5';
+      grid-template-columns: 1fr 1fr 1fr;
 
-        img {
-            width: 100%;
-            height: calc((100vw * 276) / 390);
-            display: block;
-            object-fit: cover;
+      img {
+        height: calc((100vw * 705) / 1920);
+        max-height: 705px;
+
+        &:first-child {
+          grid-area: img1;
         }
+
+        &:nth-child(2) {
+          grid-area: img2;
+        }
+
+        &:nth-child(3) {
+          height: calc((100vw * 915) / 1920);
+          max-height: 915px;
+          grid-area: img3;
+        }
+
+        &:nth-child(4) {
+          grid-area: img4;
+        }
+
+        &:nth-child(5) {
+          grid-area: img5;
+        }
+      }
     }
 
     .site_link {
-        width: 34.667vw;
-        height: 11.733vw;
-        font-size: 3.733vw;
-        font-weight: 400;
-        line-height: normal;
-        color: #fff;
-        border: 1px solid #fff;
-        display: block;
-        text-align: center;
-        line-height: 11.733vw;
-        margin-top: 10.667vw;
-        box-sizing: border-box;
+      width: 170px;
+      height: 62px;
+      font-size: 18px;
+      line-height: 62px;
+      margin: auto 0 0 auto;
     }
 
     .backto_list {
-        color: #fff;
-        width: 150px;
-        height: 62px;
-        margin: 100px auto 0;
-        display: block;
-        border: 1px solid #fff;
-        line-height: 62px;
-        text-align: center;
-        font-size: 14px;
-        font-weight: 400;
-        box-sizing: border-box;
+      width: 170px;
+      font-size: 18px;
     }
-
-
-    @media screen and (min-width:1280px) {
-        padding: 170px 55px 190px;
-
-        > img {
-            height: calc((100vw * 820) / 1920);
-            max-height: 820px;
-            margin-bottom: 80px;
-        }
-
-        .contents {
-            gap: 16px;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: stretch;
-        }
-
-        .left .title,
-        .right .categorys {
-            margin-bottom: 20px;
-            font-size: 58px;
-        }
-
-        .left .content,
-        .right .category_item {
-            font-size: 30px;
-            line-height: 60px;
-        }
-
-        .left {
-            flex: 1;
-            flex: 0 0 75%;
-        }
-
-        .right {
-            text-align: right;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .file_img  {
-            gap: 24px;
-            grid-template-areas:
-            "img1 img1 img2"
-            "img3 img3 img3"
-            "img4 img5 img5"; 
-            grid-template-columns: 1fr 1fr 1fr;
-
-            img {
-                height: calc((100vw * 705) / 1920);
-                max-height: 705px;
-
-                &:first-child {
-                    grid-area: img1;
-                }
-
-                &:nth-child(2) {
-                    grid-area: img2;
-                }
-
-                &:nth-child(3) {
-                    height: calc((100vw * 915) / 1920);
-                    max-height: 915px;
-                    grid-area: img3;
-                }
-
-                &:nth-child(4) {
-                    grid-area: img4;
-                }
-
-                &:nth-child(5) {
-                    grid-area: img5;
-                }
-            }
-        }
-
-        .site_link {
-            width: 170px;
-            height: 62px;
-            font-size: 18px;
-            line-height: 62px;
-            margin: auto 0 0 auto;
-        }
-
-        .backto_list {
-            width: 170px;
-            font-size: 18px;
-        }
-    }
+  }
 }

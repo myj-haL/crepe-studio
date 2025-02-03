@@ -18,8 +18,8 @@ function App() {
     <BrowserRouter basename="/crepe-studio">
       <AnimatedCursor
         innerSize={15}
-        outerSize={35}
-        outerScale={2}
+        outerSize={15}
+        outerScale={4}
         color="230, 87, 6"
         outerAlpha={0.6}
         outerStyle={{

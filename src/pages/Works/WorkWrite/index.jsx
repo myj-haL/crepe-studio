@@ -1,11 +1,11 @@
-import { useState, useRef, useEffect } from "react";
-import Layouts from "../../../common/components/Layouts";
-import style from "./index.module.css";
+import { useState, useRef, useEffect } from 'react';
+import Layouts from '../../../common/components/Layouts';
+import style from './index.module.css';
 import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.snow.css';
-import addImageIcon from "images/board/icon-add-image.svg";
-import Check from "@components/Check";
-import { useNavigate } from "react-router-dom";
+import addImageIcon from 'images/board/icon-add-image.svg';
+import Check from '@components/Check';
+import { useNavigate } from 'react-router-dom';
 
 function WorkWrite() {
   // State for collecting form data
@@ -24,18 +24,23 @@ function WorkWrite() {
 
   // Check login status and redirect if not logged in
   useEffect(() => {
-    const token = localStorage.getItem("accessToken");
+    const token = localStorage.getItem('accessToken');
     if (!token) {
-      navigate("/", { replace: true });
+      navigate('/', { replace: true });
     }
   }, [navigate]);
 
   // Toolbar configuration for ReactQuill
   const modules = {
     toolbar: [
-      [{ 'header': [1, 2, 3, false] }],
+      [{ header: [1, 2, 3, false] }],
       ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+      [
+        { list: 'ordered' },
+        { list: 'bullet' },
+        { indent: '-1' },
+        { indent: '+1' },
+      ],
       ['link', 'image'],
       ['clean'],
     ],
@@ -48,37 +53,40 @@ function WorkWrite() {
     const API_URL = process.env.REACT_APP_API_URL;
 
     const formData = new FormData();
-    formData.append("title", title);
-    formData.append("link", link);
-    formData.append("content", content);
-    formData.append("services", JSON.stringify(services));
-    if (mainImage) formData.append("mainImage", mainImage);
-    subImages.forEach((image, index) => formData.append(`subImages[${index}]`, image));
+    formData.append('title', title);
+    formData.append('link', link);
+    formData.append('content', content);
+    formData.append('services', JSON.stringify(services));
+    if (mainImage) formData.append('mainImage', mainImage);
+    subImages.forEach((image, index) =>
+      formData.append(`subImages[${index}]`, image),
+    );
 
     try {
       const response = await fetch(`${API_URL}/content/upload`, {
-        method: "POST",
+        method: 'POST',
         body: formData,
       });
 
       if (response.ok) {
-        alert("Content successfully uploaded!");
-        navigate("/works");
+        alert('Content successfully uploaded!');
+        navigate('/works');
       } else {
         const errorData = await response.json();
         alert(`Error: ${errorData.message}`);
       }
     } catch (error) {
-      console.error("Error uploading content:", error);
-      alert("Failed to upload content.");
+      console.error('Error uploading content:', error);
+      alert('Failed to upload content.');
     }
   };
-
 
   // Add or remove services
   const toggleService = (service) => {
     setServices((prev) =>
-      prev.includes(service) ? prev.filter((s) => s !== service) : [...prev, service]
+      prev.includes(service)
+        ? prev.filter((s) => s !== service)
+        : [...prev, service],
     );
   };
 
@@ -99,6 +107,10 @@ function WorkWrite() {
   const handleImageUpload = (e, setImageHandler) => {
     const file = e.target.files[0];
     if (file) setImageHandler(file);
+  };
+
+  const removeSubImage = (index) => {
+    setSubImages((prev) => prev.filter((_, i) => i !== index)); // 선택된 서브 이미지 제거
   };
 
   return (
@@ -168,26 +180,24 @@ function WorkWrite() {
                 </p>
               </span>
               <div className={style.img_box} onClick={triggerMainImageInput}>
-                <div className={style.text_box}>
-                  <input
-                    type="file"
-                    ref={mainImageInputRef} // Use ref
-                    onChange={(e) => handleImageUpload(e, setMainImage)}
-                    style={{ display: 'none' }}
+                {mainImage ? (
+                  <img
+                    alt="Main Preview"
+                    src={URL.createObjectURL(mainImage)} // Show preview inside the upload box
+                    className={style.preview_img}
                   />
-                  {mainImage ? (
-                    <img
-                      alt="Main Preview"
-                      src={URL.createObjectURL(mainImage)} // Show preview inside the upload box
-                      className={style.preview_img}
+                ) : (
+                  <div className={style.text_box}>
+                    <input
+                      type="file"
+                      ref={mainImageInputRef} // Use ref
+                      onChange={(e) => handleImageUpload(e, setMainImage)}
+                      style={{ display: 'none' }}
                     />
-                  ) : (
-                    <>
-                      <img alt="add img" src={addImageIcon} />
-                      <p>Click the icon to upload an image.</p>
-                    </>
-                  )}
-                </div>
+                    <img alt="add img" src={addImageIcon} />
+                    <p>Click the icon to upload an image.</p>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -224,6 +234,13 @@ function WorkWrite() {
                       src={URL.createObjectURL(image)}
                       className={style.sub_img}
                     />
+                    <button
+                      type="button"
+                      onClick={() => removeSubImage(index)}
+                      className={style.remove_button}
+                    >
+                      Remove
+                    </button>
                   </li>
                 ))}
               </ul>
