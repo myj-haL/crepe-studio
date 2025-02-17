@@ -1,10 +1,10 @@
-import style from "./index.module.css";
+import style from './index.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useState, useEffect } from "react";
-import useResponsive from "../../../common/hook/Responsive";
+import { useState, useEffect } from 'react';
+import useResponsive from '../../../common/hook/Responsive';
 
 function Works() {
   const [worksData, setWorksData] = useState([]);
@@ -21,10 +21,10 @@ function Works() {
           const data = await response.json();
           setWorksData(data.slice(0, 5));
         } else {
-          console.error("Error fetching data");
+          console.error('Error fetching data');
         }
       } catch (error) {
-        console.error("Error fetching works data:", error);
+        console.error('Error fetching works data:', error);
       }
     };
 
@@ -40,13 +40,21 @@ function Works() {
     <div
       className={style.container}
       {...(screenSize < 1280
-        ? { 'data-aos': "fade-up", 'data-aos-offset': "100", 'data-aos-duration': "1500" }
+        ? {
+            'data-aos': 'fade-up',
+            'data-aos-offset': '100',
+            'data-aos-duration': '1500',
+          }
         : {})}
     >
       <h2
         className={style.title}
         {...(screenSize >= 1280
-          ? { 'data-aos': "fade-up", 'data-aos-offset': "100", 'data-aos-duration': "1500" }
+          ? {
+              'data-aos': 'fade-up',
+              'data-aos-offset': '100',
+              'data-aos-duration': '1500',
+            }
           : {})}
       >
         Works
@@ -59,8 +67,8 @@ function Works() {
           centeredSlides={false}
           breakpoints={{
             1280: {
-              slidesPerView: 2.6
-            }
+              slidesPerView: 2.9,
+            },
           }}
           className={style.works_swipe}
         >
@@ -71,7 +79,10 @@ function Works() {
                   <img alt="thumbnail" src={item.mainImage} />
                 </div>
                 <h3 className={style.name}>{item.title}</h3>
-                <p className={style.category}>{item.services.join(', ')}</p> {/* 서비스 배열 표시 */}
+                <p className={style.category}>
+                  {item.services.join(', ')}
+                </p>{' '}
+                {/* 서비스 배열 표시 */}
               </a>
             </SwiperSlide>
           ))}
