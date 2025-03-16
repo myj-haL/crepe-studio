@@ -12,7 +12,7 @@ function Footer() {
             (주) 크레페스튜디오 <p>|</p> 대표 문유정 임지영
           </li>
           <li className={style.info_item}>
-            사업자등록번호 : 203-2933-20392
+            사업자등록번호 : 515-11-08868
             <br />
           </li>
           {/* <li className={style.info_item}>전화번호 : 02-203-2223</li> */}
