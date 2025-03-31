@@ -50,7 +50,8 @@
 
 @font-face {
   font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
 }
@@ -66,7 +67,7 @@ body {
   height: 100%;
   font-family: 'Helvetica Neue', 'Pretendard', sans-serif;
   word-break: keep-all;
-  text-rendering:optimizeLegibility;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   color: #fff;
 }
@@ -260,8 +261,8 @@ input {
   -moz-appearance: none;
   -webkit-appearance: none;
   border-radius: 0;
-  -webkit-border-radius:0;
-  -moz-border-radius:0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
   outline: 0;
 }
 
@@ -496,6 +497,11 @@ textarea {
   &:focus {
     outline: 0;
   }
+}
+
+.loading {
+  display: grid;
+  align-content: center;
 }
 
 @media screen and (min-width: 1280px) {
