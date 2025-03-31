@@ -15,7 +15,7 @@ const WorkEdit = lazy(() => import('./pages/Works/WorkEdit'));
 
 function App() {
   return (
-    <BrowserRouter basename="/crepe-studio">
+    <BrowserRouter basename="/">
       <AnimatedCursor
         innerSize={15}
         outerSize={15}

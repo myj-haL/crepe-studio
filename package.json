@@ -26,7 +26,7 @@
     "swiper": "^11.1.9",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://www.crepe-studio.com/",
+  "homepage": "",
   "scripts": {
     "start": "craco start",
     "devbuild": "craco build",
