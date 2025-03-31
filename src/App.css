@@ -68,10 +68,11 @@ body {
   word-break: keep-all;
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  color: #fff;
 }
 
 body {
-  background-color: #0A0A0A;
+  background-color: #060606;
 }
 
 .wrap {
@@ -252,6 +253,16 @@ textarea {
   &:active {
     outline: none;
   }
+}
+
+input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  outline: 0;
 }
 
 input::-webkit-outer-spin-button,
@@ -475,6 +486,16 @@ ol {
 
 .d_mobile_block {
   display: block;
+}
+
+input,
+textarea {
+  background-color: #060606;
+
+  &:active,
+  &:focus {
+    outline: 0;
+  }
 }
 
 @media screen and (min-width: 1280px) {

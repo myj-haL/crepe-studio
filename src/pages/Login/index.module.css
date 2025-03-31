@@ -1,0 +1,92 @@
+.container {
+  padding: 74px 16px 80px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+
+  img {
+    width: 120px;
+    display: block;
+    margin: 0 auto 28px;
+  }
+
+  form {
+    width: 100%;
+    display: block;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  button {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 34px;
+    font-family: Pretendard;
+    height: 48px;
+    border-radius: 6px;
+  }
+
+  .field_box {
+    display: grid;
+    gap: 10px;
+
+    input {
+      border: 1px solid #5a5a5a;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0 13px;
+      color: #fff;
+
+      &::placeholder {
+        color: #898989;
+        font-weight: 300;
+      }
+
+      &:focus,
+      &:active {
+        border-color: #fff;
+      }
+    }
+  }
+
+  .post_btn {
+    width: 100%;
+    background-color: #fff;
+    color: #0a0a0a;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  @media screen and (min-width:1280px) {
+    padding: 140px 55px;
+
+    input[type="text"],
+    input[type="password"],
+    button { 
+      font-size: 18px;
+      height: 56px;
+      border-radius: 8px;
+    }
+
+    img {
+      width: 170px;
+      margin-bottom: 48px;
+    }
+
+    .field_box {
+      gap: 16px;
+    }
+
+    .post_btn {
+      margin-top: 16px;
+    }
+
+  }
+}
