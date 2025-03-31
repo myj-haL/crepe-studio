@@ -26,7 +26,7 @@ function App() {
           mixBlendMode: 'exclusion',
         }}
       />
-      <Suspense fallback={<div className="loading">Loading...</div>}>
+      <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
