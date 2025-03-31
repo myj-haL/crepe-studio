@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import style from "./index.module.css";
-import Layouts from "../../common/components/Layouts";
-import logo from "images/common/logo.svg";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import style from './index.module.css';
+import Layouts from '../../common/components/Layouts';
+import logo from 'images/common/logo.svg';
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate(); // useNavigate 사용
 
   // ✅ 로그인 상태 확인 후 리디렉션
   useEffect(() => {
-    const token = localStorage.getItem("accessToken");
+    const token = localStorage.getItem('accessToken');
     if (token) {
       navigate('/works', { replace: true });
     }
@@ -22,7 +22,7 @@ function Login() {
     e.preventDefault();
 
     if (!username || !password) {
-      return alert("ID와 PASSWORD를 입력해주세요.");
+      return alert('ID와 PASSWORD를 입력해주세요.');
     }
 
     setIsLoading(true);
@@ -30,23 +30,23 @@ function Login() {
     try {
       const API_URL = process.env.REACT_APP_API_URL;
       const response = await fetch(`${API_URL}/auth/login`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ username, password }),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || "로그인이 실패하였습니다.");
+        throw new Error(errorData.error || '로그인이 실패하였습니다.');
       }
 
       const data = await response.json();
-      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem('accessToken', data.accessToken);
 
-      alert("Login successful!");
-      navigate("/works", { replace: true });
+      alert('Login successful!');
+      navigate('/works', { replace: true });
     } catch (err) {
       console.error(err.message);
       alert(err.message);
@@ -81,7 +81,7 @@ function Login() {
           </div>
 
           <button type="submit" className={style.post_btn} disabled={isLoading}>
-            {isLoading ? "Loading..." : "Login"}
+            {isLoading ? 'Loading...' : 'Login'}
           </button>
         </form>
       </div>
